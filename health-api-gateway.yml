@@ -1,0 +1,17 @@
+spring:
+  cloud:      
+    gateway:
+      routes:
+      - id: patient_gateway_id
+        predicates:
+        - Path=/api/svc/patient/**
+        uri: lb://patient-service
+        
+      - id: appointment_gateway_id
+        predicates:
+        - Path=/api/svc/appointment/**
+        uri: lb://appointment-service
+        
+
+
+       
